@@ -7,6 +7,8 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @items = @user.items.uniq
+    @count_want = @user.want_items.count
   end
 
   def create
